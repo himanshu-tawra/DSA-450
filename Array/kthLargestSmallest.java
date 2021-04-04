@@ -10,7 +10,7 @@ class kthLargestSmallest{
         if(k > arr.length){
             return -1;
         }
-        return arr[arr.length - k]; // 1 2 3 4 5 6 7 8 9 10
+        return arr[arr.length - k]; 
 
     }
 
@@ -26,7 +26,7 @@ class kthLargestSmallest{
 
     public static void main(String[] args){
 
-        int arr[] = {5,3,7,12,21,14,19,6,10,1}; // 1 3 5 6 
+        int arr[] = {5,3,7,12,21,14,19,6,10,1}; 
         int k = 4;
         int largest = getLargest(arr, k);
         int smallest = getSmallest(arr, k);
