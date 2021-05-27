@@ -1,47 +1,35 @@
-package Array;
+/*
+	Program to find minmum and maximum in an array 
 
-class MinMax{
-	
-	
-	static class Pair{
+*/
+
+public class MinMax{
+
+	public static int[] minMax(int[] arr,int len){
 		
-		int min;
-		int max;
-		
-	}
-	
-	public static Pair minMaxElement(int arr[]){
-		
-		Pair minMaxPair = new Pair();
-		
-		minMaxPair.min = arr[0];
-		minMaxPair.max = arr[0];
-		for(int i = 1; i < arr.length; i++){
-			
-			if(minMaxPair.min > arr[i]){
-				minMaxPair.min = arr[i];
+		int[] result = new int[2];
+
+		for(int i = 0; i < len; i++){
+			if(arr[i] > result[1]){
+				result[1] = arr[i];
 			}
-			else if(minMaxPair.max < arr[i]){
-				minMaxPair.max = arr[i];
+			else if(arr[i] < result[0]){
+				result[0] = arr[i];
 			}
-			
 		}
-		return minMaxPair;
-		
+		return result;
 	}
 	
-	
-	
-	
-	
+
 	public static void main(String[] args){
 		
-		int[] arr = {1,5,10,6,8,4};
+		int[] arr = {1,2,3,4,5,6,7};
+		int len = arr.length;
+
+		int[] result = minMax(arr,len);
+		System.out.println("Maximum value in array is " + result[1]);
+		System.out.println("Minimum value in array is " + result[0]); 		
 		
-		Pair result = new Pair();
-		result = minMaxElement(arr);
-		
-		System.out.println("Minimum element " + result.min);
-		System.out.println("Maximum element " + result.max);
 	}
+
 }
